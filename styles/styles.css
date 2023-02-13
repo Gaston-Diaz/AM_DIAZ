@@ -1,0 +1,31 @@
+html{
+    margin: 0%;
+    padding: 0%;
+}
+.carousel-inner{
+    height: 250px;
+}
+.carousel-inner img {
+    width: 100%;
+    max-height: 460px;
+}
+.cardDiv{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex; 
+    justify-content: space-evenly;
+}
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+}
+.inputDiv{
+    margin: 3%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.marginF{
+    margin: 1%;
+}
+
