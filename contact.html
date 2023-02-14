@@ -41,22 +41,27 @@
         </nav>
   </header>
 
-  <main>
-    <form class="formContact">
-      <fieldset>
-        <div class="br">
-          <label for="fname">Name:</label>
-          <input type="text" id="fname" name="fname">
+  <main class="br">
+    <form>
+      <div class="row justify-content-md-center">
+        <div class="col-7">
+          <label for="fName" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="fName">
         </div>
-        <div class="br">
-          <label for="lname">Email:</label>
-          <input type="text" id="lname" name="lname">
+        <div class="col-7">
+          <label for="fEmail" class="form-label">Email:</label>
+          <input type="text" class="form-control" id="fEmail">
         </div>
-        <div class="br">
-          <label for="msj">Menssage:</label>
-          <textarea id="msj" name="msj"></textarea>
+        <div class="col-7">
+          <label for="msj" class="form-label">Menssage:</label>
+          <textarea id="msj" name="msj" class="form-control"></textarea>
         </div>
-      </fieldset>
+      </div>
+
+      <div class="row justify-content-md-center br">
+        <button type="submit" class="btn btn-primary col-2">Submit</button>
+      </div>
+  
     </form>
   </main>
     
