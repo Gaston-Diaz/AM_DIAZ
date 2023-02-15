@@ -23,6 +23,10 @@ footer{
 #content{
     padding-bottom: 81px;
 }
+.navbar-toggler:focus{
+    border: none !important;
+    box-shadow: none !important;
+}
 .carousel-inner{
     height: 250px;
     /*position: relative;*/
