@@ -178,7 +178,9 @@ const data = {
       let div = document.createElement("div");
       div.className = "cardDiv"
       div.innerHTML += `
-      <div class="card" style="width: 18rem;">
+      <div class="card" data-aos="fade-up"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="1000" style="width: 18rem;">
       <img src="${event.image}" class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text">${event.description}</p>
