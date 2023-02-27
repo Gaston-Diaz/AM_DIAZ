@@ -38,11 +38,14 @@ footer{
 .corousel-fondo{
     margin-left: 0;
     margin-right: 0;
-    height: 8rem;
+    height: 5rem;
     background-color: #f0edee;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+.rounded-start{
+    height: 20rem;
 }
 .card-img-top{
     height: 10rem;
