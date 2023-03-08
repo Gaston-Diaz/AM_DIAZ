@@ -7,7 +7,7 @@ import data from './data.js'
         let div = document.createElement("div");
         div.className = "cardDiv";
         div.innerHTML += `
-      <div style="width: 18rem;">
+      <div style="width: 18rem;" class="card">
       <img src="${event.image}" class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text">${event.description}</p>
