@@ -87,14 +87,14 @@ const crearCheckbox = (array,checkboxDiv) =>{ //se crean las checkbox dinamicas
 crearCheckbox(categorias,$checkboxDiv)
 
 const filtroCheckbox = (array, value) => { // se muestarn las cards que cumplen con la categoria del checkbox
-  let arrayFiltrado = array.filter(evento => evento.category.toLowerCase().includes(value))
+  let arrayFiltrado = array.filter(evento => evento.category.toLowerCase().includes(value.toLowerCase()))
   return arrayFiltrado 
 }
 
 $checkboxDiv.addEventListener('change', (e)=>{
   console.log(e.target.value)
   let nArray = filtroCheckbox(data.events,e.target.value)
-  console.log(nArray)
+  crearCards(nArray,data.currentDate,$containerCard)
 })
 
 $inputSearch.addEventListener('keyup', (e)=>{
