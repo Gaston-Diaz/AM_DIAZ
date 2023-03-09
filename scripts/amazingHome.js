@@ -43,6 +43,7 @@ const crearCards = (array, containerCard) =>{
     <div style="width: 18rem;" class="card">
       <img src="${event.image}" class="card-img-top" alt="...">
       <div class="card-body">
+        <h5 class="card-title">${event.name}</h5>
         <p class="card-text">${event.description}</p>
       </div>
       <div class="card-footer">
@@ -65,4 +66,8 @@ const filtrarSearch = (array,value) =>{ //array va a aser la lista con los datos
   return filteredArray
 }
 
+$inputSearch.addEventListener('keyup', (e)=>{
+  let nArray = filtrarSearch(data.events,e.target.value)//mando el texto que busco y me devuelve los elementos que coinciden
+  crearCards(nArray,$containerCard)
+})
 
