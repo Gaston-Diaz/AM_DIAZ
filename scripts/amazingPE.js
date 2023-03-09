@@ -24,19 +24,19 @@ import data from './data.js'
     containerCard.appendChild(fragmento);
   }
 
-  cards(data,containerCard); */
-  let $containerCard = document.getElementById('containerCard') // capturar el elemento conteiner de las cards
+  cards(data,containerCard); */ 
+let $containerCard = document.getElementById('containerCard') // capturar el elemento conteiner de las cards
 let fragment = document.createDocumentFragment();
 
 let $checkboxDiv = document.getElementById('checkboxDiv') //capturar el elemento contenedor de los checkbox
 let $inputSearch = document.getElementById('inputSearch') // capturo el input de busqueda
 
 //creacion de las cards dinamicas
-const crearCards = (array, containerCard) =>{
+const crearCards = (array,date, containerCard) =>{
   $containerCard.innerHTML = ""
   //let eventos = array.events
-  array.events.forEach(event => {
-    if (event.date <= array.currentDate) {
+  array.forEach(event => {
+    if (event.date <= date) {
     let card = document.createElement('div')
     card.className = `cardDiv ${event.name.toLowerCase()}`
     card.innerHTML = `
@@ -57,13 +57,15 @@ const crearCards = (array, containerCard) =>{
   });
   containerCard.appendChild(fragment);
 }
-crearCards(data, $containerCard)
+crearCards(data.events,data.currentDate, $containerCard) //agregue la fecha para que funcione la validacion
+
+
 
 //Barra de busqueda por nombre
-/*const filtrarSearch = (array,value) =>{ //array va a aser la lista con los datos y value es el parametro de entrada del search
+const filtrarSearch = (array,value) =>{ //array va a aser la lista con los datos y value es el parametro de entrada del search
   let filteredArray = array.filter(evento => evento.name.toLowerCase().includes(value.toLowerCase().trim())) // trim saca los espacios del principio y final de los caracteres
   return filteredArray
-}*/
+}
 
 const capturarCategorias = (array) =>{ //hago un array con las categorias de eventos
   let arrayCategorias = array.map(evento => evento.category)
@@ -94,9 +96,10 @@ $checkboxDiv.addEventListener('change', (e)=>{
   let nArray = filtroCheckbox(data.events,e.target.value)
   console.log(nArray)
 })
-/*
+
 $inputSearch.addEventListener('keyup', (e)=>{
   let nArray = filtrarSearch(data.events,e.target.value)//mando el texto que busco y me devuelve los elementos que coinciden
-  crearCards(nArray,$containerCard)
-})*/
+  console.log(nArray)
+  crearCards(nArray,data.currentDate,$containerCard) //agregue la fecha para que funcione la validacion
+})
 
