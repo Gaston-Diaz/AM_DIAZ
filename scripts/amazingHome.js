@@ -25,13 +25,17 @@
   cards(data,containerCard);
 */
 
-let $containerCard = document.getElementById('containerCard')
+let $containerCard = document.getElementById('containerCard') // capturar el elemento conteiner de las cards
 let fragment = document.createDocumentFragment();
 
+let $checkboxDiv = document.getElementById('checkboxDiv') //capturar el elemento contenedor de los checkbox
+let $inputSearch = document.getElementById('inputSearch') // capturo el input de busqueda
+
+//creacion de las cards dinamicas
 const crearCards = (array, containerCard) =>{
   $containerCard.innerHTML = ""
-  let eventos = array.events
-  eventos.forEach(event => {
+  //let eventos = array.events
+  array.forEach(event => {
 
     let card = document.createElement('div')
     card.className = `cardDiv ${event.name.toLowerCase()}`
@@ -53,6 +57,11 @@ const crearCards = (array, containerCard) =>{
   containerCard.appendChild(fragment);
 }
 
-crearCards(data, $containerCard)
+crearCards(data.events, $containerCard)
+
+//Barra de busqueda por nombre
+const filtrarSearch = (array,value) =>{ //array va a aser la lista con los datos y value es el parametro de entrada del search
+  
+}
 
 
