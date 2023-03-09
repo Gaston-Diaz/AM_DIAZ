@@ -57,7 +57,6 @@ const crearCards = (array, containerCard) =>{
   });
   containerCard.appendChild(fragment);
 }
-
 crearCards(data.events, $containerCard)
 
 //Barra de busqueda por nombre
@@ -65,6 +64,25 @@ const filtrarSearch = (array,value) =>{ //array va a aser la lista con los datos
   let filteredArray = array.filter(evento => evento.name.toLowerCase().includes(value.toLowerCase().trim())) // trim saca los espacios del principio y final de los caracteres
   return filteredArray
 }
+
+const capturarCategorias = (array) =>{ //hago un array con las categorias de eventos
+  let arrayCategorias = array.map(evento => evento.category)
+  //let sinRepetir = Array.from(new Set(arrayCategorias))
+  let sinRepetir = [... new Set(arrayCategorias)] // suelta los elementos dentro de sinRepetir
+  return sinRepetir
+}
+let categorias = capturarCategorias(data.events)
+const crearCheckbox = (array,checkboxDiv) =>{ //se crean las checkbox dinamicas 
+  let text ="";
+  array.forEach(element => text +=`
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id=${element} value=${element}>
+    <label class="form-check-label" for=${element}>${element}</label>
+  </div>
+  `);
+  checkboxDiv.innerHTML = text;
+}
+crearCheckbox(categorias,$checkboxDiv)
 
 $inputSearch.addEventListener('keyup', (e)=>{
   let nArray = filtrarSearch(data.events,e.target.value)//mando el texto que busco y me devuelve los elementos que coinciden
