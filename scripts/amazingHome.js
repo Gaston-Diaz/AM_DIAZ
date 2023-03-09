@@ -61,7 +61,8 @@ crearCards(data.events, $containerCard)
 
 //Barra de busqueda por nombre
 const filtrarSearch = (array,value) =>{ //array va a aser la lista con los datos y value es el parametro de entrada del search
-  
+  let filteredArray = array.filter(evento => evento.name.toLowerCase().includes(value.toLowerCase().trim())) // trim saca los espacios del principio y final de los caracteres
+  return filteredArray
 }
 
 
