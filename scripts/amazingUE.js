@@ -88,6 +88,12 @@ const filtroCheckbox = (array, value) => { // se muestarn las cards que cumplen 
   let arrayFiltrado = array.filter(evento => evento.category.toLowerCase().includes(value.toLowerCase()))
   return arrayFiltrado 
 }
+/*
+const filtroCruzado = (array) =>{
+  let arrayCruzado = filtroCheckbox(array, $checkboxDiv.value)
+  arrayCruzado = filtrarSearch(arrayCruzado, $inputSearch.value)
+  return arrayCruzado
+}*/
 
 $checkboxDiv.addEventListener('change', (e)=>{
   console.log(e.target.value)
