@@ -23,7 +23,7 @@ const crearCards = (array, containerCard) =>{
       </div>
       <div class="card-footer">
         Price ${event.price}
-        <a href="./details.html" class="btn btn-primary">details</a>
+        <a href="./details.html?id=${event._id}" class="btn btn-primary">details</a>
       </div>
     </div>
     `
