@@ -1,9 +1,9 @@
-let dataAPI = './scripts/amazing.json'
+let dataAPI = "./scripts/amazing.json";
 
 let eventsData = [];
-let cDate ;
+let cDate;
 
-async function fetchDataApi(){
+async function fetchDataApi() {
   try {
     const response = await fetch(dataAPI);
     const data = await response.json();
@@ -107,8 +107,4 @@ const filtroCruzado = (array) =>{
   }
 }
 
-fetchDataApi()
-
-
-
-
+fetchDataApi();

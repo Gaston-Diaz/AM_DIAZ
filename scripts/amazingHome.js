@@ -1,8 +1,8 @@
-let dataAPI = './scripts/amazing.json'
+let dataAPI = "./scripts/amazing.json";
 
 let eventsData = [];
 
-async function fetchDataApi(){
+async function fetchDataApi() {
   try {
     const response = await fetch(dataAPI);
     const data = await response.json();
@@ -96,10 +96,4 @@ async function fetchDataApi(){
   }
 }
 
-fetchDataApi()
-
-
-
-
-
-
+fetchDataApi();

@@ -1,19 +1,28 @@
-import data from './data.js'
-let detailContainer = document.querySelector('#containerCard')
+let dataAPI = "./scripts/amazing.json";
 
-const queryString = location.search
+let eventsData = [];
 
-const params = new URLSearchParams(queryString)
+async function fetchDataApi() {
+  try {
+    const response = await fetch(dataAPI);
+    const data = await response.json();
+    eventsData = data.events;
 
-const eventId = params.get('id')
+    let detailContainer = document.querySelector("#containerCard");
 
-const event = data.events.find( event => event._id == eventId)
+    const queryString = location.search;
 
-console.log(event)
+    const params = new URLSearchParams(queryString);
 
-function crearDetails(event, container){
-    let div = document.createElement('div')
-    div.innerHTML = `
+    const eventId = params.get("id");
+
+    const event = eventsData.find((event) => event._id == eventId);
+
+    console.log(event);
+
+    function crearDetails(event, container) {
+      let div = document.createElement("div");
+      div.innerHTML = `
     <div class="card mb-3" style="max-width: 100%;">
      <div class="row g-0">
         <div class="col-md-4">
@@ -35,7 +44,12 @@ function crearDetails(event, container){
      </div>
     </div>
     `;
-    container.appendChild(div)
-}
+      container.appendChild(div);
+    }
 
-crearDetails(event,detailContainer)
+    crearDetails(event, detailContainer);
+  } catch {
+    console.log(error);
+  }
+}
+fetchDataApi();
