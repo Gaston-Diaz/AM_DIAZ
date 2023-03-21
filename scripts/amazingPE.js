@@ -1,30 +1,22 @@
-import data from './data.js'
-/*
-  let fragmento = document.createDocumentFragment();
-  function cards(array, containerCard) {
-    for (let event of array.events) {
-      if (event.date <= array.currentDate) {
-        let div = document.createElement("div");
-        div.className = "cardDiv";
-        div.innerHTML += `
-      <div style="width: 18rem;" class="card">
-      <img src="${event.image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">${event.description}</p>
-      </div>
-      <div class="card-footer">
-        Price ${event.price}
-        <a href="./details.html" class="btn btn-primary">details</a>
-      </div>
-    </div>
-      `;
-        fragmento.appendChild(div);
-      }
-    }
-    containerCard.appendChild(fragmento);
-  }
+let dataAPI = './scripts/amazing.json'
 
-  cards(data,containerCard); */ 
+let eventsData = [];
+let cDate ;
+
+async function fetchDataApi(){
+  try{
+    const response = await fetch(dataAPI)
+    const data = await response.json()
+    
+
+  }
+  catch{
+    console.log(error)
+  }
+}
+
+
+
 let $containerCard = document.getElementById('containerCard') // capturar el elemento conteiner de las cards
 let fragment = document.createDocumentFragment();
 
